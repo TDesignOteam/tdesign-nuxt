@@ -1,5 +1,5 @@
 import { addComponent, tryResolveModule } from '@nuxt/kit';
-import { join } from 'pathe';
+import { join } from 'path';
 
 import { componentMap } from './components';
 import { map, kebabCase } from 'lodash-es';
@@ -27,7 +27,7 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
 /**
  * auto import global style
  */
-export const resolveTDesignVariables = async (_options: ModuleOptions, nuxt) => {
+export const resolveTDesignVariables = async (_options: ModuleOptions, nuxt: any) => {
   const tdesignGlobalStyle = await tryResolveModule('tdesign-vue-next/package.json').then((tdLocation) => (tdLocation ? join(tdLocation, '../es/style/index.css') : Promise.reject('Unable to resolve tdesign-vue-next Global Style. Is it installed?')));
   nuxt.options.css.push(tdesignGlobalStyle);
 };

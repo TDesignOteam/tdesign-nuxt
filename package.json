@@ -34,8 +34,8 @@
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
-    "tdesign-vue-next": ">=1",
-    "tdesign-icons-vue-next":">=0.2.2"
+    "tdesign-icons-vue-next": ">=0.2.2",
+    "tdesign-vue-next": ">=1"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -43,11 +43,11 @@
     "@nuxt/module-builder": "^0.5.5",
     "@nuxt/schema": "^3.10.3",
     "@nuxt/test-utils": "^3.11.0",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.11.22",
     "changelogen": "^0.5.5",
     "eslint": "^8.57.0",
     "nuxt": "^3.10.3",
-    "pathe": "^1.1.2",
     "prettier": "^3.2.5",
     "tdesign-icons-vue-next": "^0.2.2",
     "tdesign-vue-next": "^1.8.1",

@@ -1,4 +1,4 @@
-import { defineNuxtModule, addPlugin, createResolver, tryResolveModule } from '@nuxt/kit';
+import { defineNuxtModule,  createResolver } from '@nuxt/kit';
 
 import type { ModuleOptions } from './interface';
 import { resolveTDesignComponents, resolveTDesignVariables } from './resolvers';
