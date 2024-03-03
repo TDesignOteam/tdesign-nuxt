@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "my-module-playground",
+  "name": "@tdesign-vue-next/nuxt-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",

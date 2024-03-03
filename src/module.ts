@@ -1,19 +1,21 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, tryResolveModule } from '@nuxt/kit';
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+import type { ModuleOptions } from './interface';
+import { resolveTDesignComponents, resolveTDesignVariables } from './resolvers';
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'TDesign Vue Next Nuxt module',
-    configKey: 'myModule'
+    configKey: 'tdesign'
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup (options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+  setup(options: ModuleOptions, nuxt) {
+    const resolver = createResolver(import.meta.url);
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    console.log('🚀 tdesign-vue-next nuxt module is loading');
+
+    resolveTDesignVariables(options, nuxt);
+    resolveTDesignComponents(options);
   }
-})
+});

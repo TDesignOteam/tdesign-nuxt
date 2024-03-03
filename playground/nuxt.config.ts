@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-  myModule: {},
+  build: {
+    transpile: ['tdesign-vue-next']
+  },
   devtools: { enabled: true }
-})
+});

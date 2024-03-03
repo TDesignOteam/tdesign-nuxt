@@ -1,5 +1,3 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin } from '#app';
 
-export default defineNuxtPlugin((nuxtApp) => {
-  console.log('Plugin injected by my-module!')
-})
+export default defineNuxtPlugin((nuxtApp) => {});
