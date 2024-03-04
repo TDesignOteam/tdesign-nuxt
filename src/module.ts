@@ -1,8 +1,8 @@
 import { defineNuxtModule,  createResolver } from '@nuxt/kit';
 
 import type { ModuleOptions } from './interface';
-import { resolveTDesignComponents, resolveTDesignVariables } from './resolvers';
 
+import { resolveTDesignComponents, resolveTDesignPlugins, resolveTDesignVariables } from './resolvers';
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'TDesign Vue Next Nuxt module',
@@ -14,8 +14,8 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url);
 
     console.log('🚀 tdesign-vue-next nuxt module is loading');
-
     resolveTDesignVariables(options, nuxt);
     resolveTDesignComponents(options);
+    resolveTDesignPlugins(options)
   }
 });

@@ -16,6 +16,11 @@ export interface ModuleOptions {
    */
   exclude?: string | RegExp | (string | RegExp)[];
   /**
+   * import plugin
+   *
+   */
+  plugins?:Array<string>
+  /**
    * self-defined the component prefix
    */
   prefix?: string
