@@ -4,7 +4,7 @@ export const componentMap = {
   button: ['Button', 'ButtonGroup'],
   link: ['Link'],
   // Layout Components
-  divider: ['divider'],
+  divider: ['Divider'],
   grid: ['Row', 'Col'],
   layout: ['Layout', 'Header', 'Aside', 'Content', 'Footer'],
 };
