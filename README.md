@@ -33,15 +33,18 @@ yarn add --dev @tdesign-vue-next/nuxt
 npm install --save-dev @tdesign-vue-next/nuxt
 ```
 
-2. Add `@tdesign-vue-next/nux` to the `modules` section of `nuxt.config.ts`
+2. Add `@tdesign-vue-next/nuxt` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
-  modules: ['@tdesign-vue-next/nuxt']
+  modules: ['@tdesign-vue-next/nuxt'],
+  build: {
+    transpile: ['tdesign-vue-next']
+  }
 });
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+That's it! You can now use Nuxt Module for TDesign in your Nuxt app ✨
 
 ## Development
 

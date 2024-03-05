@@ -3,5 +3,8 @@ export default defineNuxtConfig({
   build: {
     transpile: ['tdesign-vue-next']
   },
+  tdesign: {
+    // prefix: 'tdesign'
+  },
   devtools: { enabled: true }
 });
