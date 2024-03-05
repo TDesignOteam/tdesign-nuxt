@@ -67,5 +67,3 @@ export const componentMap = {
   upload: ['Upload'],
   'config-provider': ['ConfigProvider']
 };
-
-export const pluginList = ['DialogPlugin', 'MessagePlugin', 'NotifyPlugin', 'LoadingPlugin'];

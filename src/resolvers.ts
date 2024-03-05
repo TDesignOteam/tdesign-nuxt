@@ -1,8 +1,9 @@
 import { addComponent, addImportsSources, tryResolveModule } from '@nuxt/kit';
 import { join } from 'path';
 
-import { componentMap, pluginList } from './components';
+import { componentMap, pluginList, iconList } from './config';
 import { map, kebabCase } from 'lodash-es';
+import { isExclude } from './utils';
 
 import type { ModuleOptions } from './interface';
 
@@ -15,11 +16,13 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
 
   map(componentMap, (subComponents: string[], keys: string) => {
     subComponents.forEach((component) => {
-      addComponent({
-        name: `${prefix}-${kebabCase(component)}`,
-        // export:''
-        filePath: `tdesign-vue-next/${moduleMode}/${keys}/index`
-      });
+      if (!isExclude(component, options.exclude)) {
+        addComponent({
+          name: `${prefix}-${kebabCase(component)}`,
+          // export:''
+          filePath: `tdesign-vue-next/${moduleMode}/${keys}/index`
+        });
+      }
     });
   });
 };
@@ -35,8 +38,27 @@ export const resolveTDesignPlugins = (options: ModuleOptions) => {
     from: `tdesign-vue-next/${moduleMode}`
   });
 };
+
 /**
- * auto import global style
+ * auto import icon from tdesign-icons-vue-next
+ */
+export const resolveTDesignIcons = (options: ModuleOptions) => {
+  map(iconList, (icon: string) => {
+    if (!isExclude(icon, options.iconExclude)) {
+      const iconName = options.iconPrefix ? `${options.iconPrefix}-${kebabCase(icon)}-icon` : `${kebabCase(icon)}-icon`;
+      const iconFilePath = kebabCase(icon);
+
+      addComponent({
+        name: iconName,
+        // export:''
+        filePath: `tdesign-icons-vue-next/esm/components/${iconFilePath}`
+      });
+    }
+  });
+};
+
+/**
+ * auto import global css variables
  */
 export const resolveTDesignVariables = async (options: ModuleOptions, nuxt: any) => {
   const stylePath = options.esm ? '../esm/style/index.js' : '../es/style/index.css';

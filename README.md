@@ -16,6 +16,7 @@ Nuxt Module for TDesign Vue Next.
 <!-- Highlight some of the features your module provide here -->
 
 - auto-import tdesign-vue-next components
+- auto-import icons within tdesign-icons-vue-next
 - auto-import tdesign css variables
 
 ## Quick Setup

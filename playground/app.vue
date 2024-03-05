@@ -1,25 +1,31 @@
 <template>
-  <div>Tdesign Nuxt module playground!</div>
+  <div>
+    <div>TDesign Nuxt module playground!</div>
+    <t-divider>Basic</t-divider>
+    <t-space>
+      <t-button>Button</t-button>
+      <t-icon name="cry-and-laugh"></t-icon>
+    </t-space>
 
-  <t-divider>Basic</t-divider>
-  <t-space>
-    <t-button>Button</t-button>
-    <t-icon name="cry-and-laugh"></t-icon>
-  </t-space>
+    <t-divider>Layout</t-divider>
 
-  <t-divider>Layout</t-divider>
-
-  <t-divider>Data</t-divider>
-  <t-space>
-    <t-date-picker />
-  </t-space>
-  <t-divider>Plugin</t-divider>
-  <t-space>
-    <t-button @click="handleDialog"> DialogPlugin </t-button>
-    <t-button @click="handleMessage"> MessagePlugin </t-button>
-    <t-button @click="handleNotify"> NotifyPlugin </t-button>
-    <t-button @click="handleLoading"> LoadingPlugin </t-button>
-  </t-space>
+    <t-divider>Data</t-divider>
+    <t-space>
+      <t-date-picker />
+    </t-space>
+    <t-divider>Plugin</t-divider>
+    <t-space>
+      <t-button @click="handleDialog"> DialogPlugin </t-button>
+      <t-button @click="handleMessage"> MessagePlugin </t-button>
+      <t-button @click="handleNotify"> NotifyPlugin </t-button>
+      <t-button @click="handleLoading"> LoadingPlugin </t-button>
+    </t-space>
+    <t-divider>Icon </t-divider>
+    <t-space>
+      <edit-icon />
+      <edit-1-icon />
+    </t-space>
+  </div>
 </template>
 
 <script setup>
