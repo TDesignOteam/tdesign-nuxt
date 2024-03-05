@@ -41,13 +41,15 @@ export default defineNuxtConfig({
   modules: ['@tdesign-vue-next/nuxt'],
   build: {
     transpile: ['tdesign-vue-next']
-  },
-  // config for @tdesign-vue-next/nuxt
-  tdesign: {
-    resolveIcons: true
   }
+  // self-defined configuration for @tdesign-vue-next/nuxt
+  // tdesign:{
+  //  resolveIcons:true
+  // }
 });
 ```
+
+#### All Configuration for @tdesign-vue-next/nuxt
 
 | name         | type                                  | default   | description                                                                |
 | ------------ | ------------------------------------- | --------- | -------------------------------------------------------------------------- |
