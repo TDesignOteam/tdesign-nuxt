@@ -1,7 +1,7 @@
 import { addComponent, addImportsSources, tryResolveModule } from '@nuxt/kit';
 import { join } from 'path';
 
-import { componentMap,pluginList } from './components';
+import { componentMap, pluginList } from './components';
 import { map, kebabCase } from 'lodash-es';
 
 import type { ModuleOptions } from './interface';
@@ -29,7 +29,7 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
  */
 export const resolveTDesignPlugins = (options: ModuleOptions) => {
   const moduleMode = options.esm ? 'esm' : 'es';
-  const plugins=options.plugins ?? pluginList;
+  const plugins = options.plugins ?? pluginList;
   addImportsSources({
     imports: plugins,
     from: `tdesign-vue-next/${moduleMode}`
@@ -38,7 +38,9 @@ export const resolveTDesignPlugins = (options: ModuleOptions) => {
 /**
  * auto import global style
  */
-export const resolveTDesignVariables = async (_options: ModuleOptions, nuxt: any) => {
-  const tdesignGlobalStyle = await tryResolveModule('tdesign-vue-next/package.json').then((tdLocation) => (tdLocation ? join(tdLocation, '../es/style/index.css') : Promise.reject('Unable to resolve tdesign-vue-next Global Style. Is it installed?')));
+export const resolveTDesignVariables = async (options: ModuleOptions, nuxt: any) => {
+  const stylePath = options.esm ? '../esm/style/index.js' : '../es/style/index.css';
+
+  const tdesignGlobalStyle = await tryResolveModule('tdesign-vue-next/package.json').then((tdLocation) => (tdLocation ? join(tdLocation, stylePath) : Promise.reject('Unable to resolve tdesign-vue-next Global Style. Is it installed?')));
   nuxt.options.css.push(tdesignGlobalStyle);
 };
