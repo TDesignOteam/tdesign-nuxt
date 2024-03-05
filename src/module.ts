@@ -9,15 +9,7 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'tdesign'
   },
   // Default configuration options of the Nuxt module
-  defaults: {
-    resolveIcons: false,
-    esm: false,
-    exclude: undefined,
-    prefix: undefined,
-    iconExclude: undefined,
-    iconPrefix: undefined,
-    plugins: undefined
-  },
+  defaults: {},
   setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url);
 

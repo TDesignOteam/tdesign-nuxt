@@ -10,8 +10,7 @@ export interface ModuleOptions {
    */
   exclude?: string | RegExp | (string | RegExp)[];
   /**
-   * import plugin
-   *
+   * self-defined import plugin from tdesign-vue-next
    */
   plugins?: Array<string>;
   /**

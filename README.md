@@ -15,9 +15,9 @@ Nuxt Module for TDesign Vue Next.
 
 <!-- Highlight some of the features your module provide here -->
 
-- auto-import tdesign-vue-next components
-- auto-import icons within tdesign-icons-vue-next
-- auto-import tdesign css variables
+- 📦 auto-import components from `tdesign-vue-next`
+- 🗳 auto-import icons from `tdesign-icons-vue-next`
+- 🎨 auto-import TDesign global Css Variables
 
 ## Quick Setup
 
@@ -41,9 +41,23 @@ export default defineNuxtConfig({
   modules: ['@tdesign-vue-next/nuxt'],
   build: {
     transpile: ['tdesign-vue-next']
+  },
+  // config for @tdesign-vue-next/nuxt
+  tdesign: {
+    resolveIcons: true
   }
 });
 ```
+
+| name         | type                                  | default   | description                                                                |
+| ------------ | ------------------------------------- | --------- | -------------------------------------------------------------------------- |
+| resolveIcons | boolean                               | false     | to resolve single icon components from `tdesign-icons-vue-next'            |
+| prefix       | string                                | 't'       | self-defined the component prefix                                          |
+| iconPrefix   | string                                | undefined | self-defined the icon prefix                                               |
+| iconExclude  | string or RegExp (string or RegExp)[] | undefined | exclude icon, if match do not resolve the icon from tdesign-icons-vue-next |
+| esm          | boolean                               | false     | whether to import ESM version                                              |
+| plugin       | string[]                              | undefined | self-defined import plugin from tdesign-vue-next                           |
+| exclude      | string or RegExp (string or RegExp)[] | undefined | exclude component name, if match do not resolve the name                   |
 
 That's it! You can now use Nuxt Module for TDesign in your Nuxt app ✨
 
