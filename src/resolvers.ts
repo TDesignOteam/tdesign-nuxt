@@ -1,4 +1,4 @@
-import { addComponent, addImportsSources, tryResolveModule } from '@nuxt/kit';
+import { addComponent, addImportsSources, tryResolveModule, useNuxt } from '@nuxt/kit';
 import { join } from 'path';
 
 import { componentMap, pluginList, iconList } from './config';
@@ -60,7 +60,8 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
 /**
  * auto import global css variables
  */
-export const resolveTDesignVariables = async (options: ModuleOptions, nuxt: any) => {
+export const resolveTDesignVariables = async (options: ModuleOptions) => {
+  const nuxt = useNuxt();
   const stylePath = options.esm ? '../esm/style/index.js' : '../es/style/index.css';
 
   const tdesignGlobalStyle = await tryResolveModule('tdesign-vue-next/package.json').then((tdLocation) => (tdLocation ? join(tdLocation, stylePath) : Promise.reject('Unable to resolve tdesign-vue-next Global Style. Is it installed?')));
