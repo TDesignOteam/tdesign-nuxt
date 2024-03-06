@@ -8,8 +8,17 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'TDesign Vue Next Nuxt module',
     configKey: 'tdesign'
   },
-  // Default configuration options of the Nuxt module
-  defaults: {},
+  defaults: {
+    esm: false,
+    prefix: 't',
+    exclude: undefined,
+    include: undefined,
+    resolveIcons: false,
+    iconPrefix: undefined,
+    iconExclude: undefined,
+    iconInclude: undefined,
+    plugins: undefined
+  },
   setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url);
 

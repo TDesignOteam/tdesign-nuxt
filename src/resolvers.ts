@@ -3,7 +3,7 @@ import { join } from 'path';
 
 import { componentMap, pluginList, iconList } from './config';
 import { map, kebabCase } from 'lodash-es';
-import { isExclude } from './utils';
+import { isMatch } from './utils';
 
 import type { ModuleOptions } from './interface';
 
@@ -15,8 +15,12 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
   const prefix = options.prefix ?? 't';
 
   map(componentMap, (subComponents: string[], keys: string) => {
-    subComponents.forEach((component) => {
-      if (!isExclude(component, options.exclude)) {
+    let includeComponents = subComponents;
+
+    if (options.include) includeComponents = subComponents.filter((component) => isMatch(component, options.include));
+
+    includeComponents.forEach((component) => {
+      if (!isMatch(component, options.exclude)) {
         addComponent({
           name: `${prefix}-${kebabCase(component)}`,
           // export:''
@@ -43,11 +47,13 @@ export const resolveTDesignPlugins = (options: ModuleOptions) => {
  * auto import icon from tdesign-icons-vue-next
  */
 export const resolveTDesignIcons = (options: ModuleOptions) => {
-  map(iconList, (icon: string) => {
-    if (!isExclude(icon, options.iconExclude)) {
-      const iconName = options.iconPrefix ? `${options.iconPrefix}-${kebabCase(icon)}-icon` : `${kebabCase(icon)}-icon`;
-      const iconFilePath = kebabCase(icon);
+  let includeIcons = iconList;
+  if (options.iconInclude) includeIcons = iconList.filter((icon) => isMatch(icon, options.iconInclude));
 
+  map(includeIcons, (icon: string) => {
+    const iconName = options.iconPrefix ? `${options.iconPrefix}-${kebabCase(icon)}-icon` : `${kebabCase(icon)}-icon`;
+    const iconFilePath = kebabCase(icon);
+    if (!isMatch(icon, options.iconExclude)) {
       addComponent({
         name: iconName,
         // export:''
@@ -58,7 +64,7 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
 };
 
 /**
- * auto import global css variables
+ * auto import global CSS variables
  */
 export const resolveTDesignVariables = async (options: ModuleOptions) => {
   const nuxt = useNuxt();

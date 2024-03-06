@@ -6,17 +6,17 @@ export interface ModuleOptions {
    */
   esm?: boolean;
   /**
-   * exclude component name, if match do not resolve the name
-   */
-  exclude?: string | RegExp | (string | RegExp)[];
-  /**
-   * self-defined import plugin from tdesign-vue-next
-   */
-  plugins?: Array<string>;
-  /**
    * self-defined the component prefix
    */
   prefix?: string;
+  /**
+   * exclude component name, if match do not resolve the name
+   */
+  exclude?: string | RegExp | (string | RegExp)[];
+   /**
+   * included component, only resolve component which match include
+   */
+  include?: string | RegExp | (string | RegExp)[];
   /**
    * resolve `tdesign-icons-vue-next'
    * @default false
@@ -28,7 +28,15 @@ export interface ModuleOptions {
    */
   iconPrefix?: string;
   /**
-   * exclude icon, if match do not resolve the icon from tdesign-icons-vue-next
+   * excluded icons, if match do not resolve the icon from tdesign-icons-vue-next
    */
   iconExclude?: string | RegExp | (string | RegExp)[];
+  /**
+   * included icons, only resolve icons which match iconInclude
+   */
+  iconInclude?: string | RegExp | (string | RegExp)[];
+  /**
+   * self-defined import plugin from tdesign-vue-next
+   */
+  plugins?: Array<string>;
 }

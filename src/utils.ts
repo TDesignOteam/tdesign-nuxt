@@ -1,14 +1,14 @@
-function isExclude(name: string, exclude: string | RegExp | (string | RegExp)[] | undefined): boolean {
-  if (typeof exclude === 'string') return name === exclude;
+function isMatch(name: string, match: string | RegExp | (string | RegExp)[] | undefined): boolean {
+  if (typeof match === 'string') return name === match;
 
-  if (exclude instanceof RegExp) return !!name.match(exclude);
+  if (match instanceof RegExp) return !!name.match(match);
 
-  if (Array.isArray(exclude)) {
-    for (const item of exclude) {
+  if (Array.isArray(match)) {
+    for (const item of match) {
       if (name === item || name.match(item)) return true;
     }
   }
   return false;
 }
 
-export { isExclude };
+export { isMatch };

@@ -38,7 +38,7 @@ npm install --save-dev @tdesign-vue-next/nuxt
 
 ```js
 export default defineNuxtConfig({
-  modules: ['@tdesign-vue-next/nuxt'],
+  modules: ['@tdesign-vue-next/nuxt']
   // self-defined configuration for @tdesign-vue-next/nuxt
   // tdesign:{
   //  resolveIcons:true
@@ -54,9 +54,11 @@ export default defineNuxtConfig({
 | prefix       | string                                | 't'       | self-defined the component prefix                                          |
 | iconPrefix   | string                                | undefined | self-defined the icon prefix                                               |
 | iconExclude  | string or RegExp (string or RegExp)[] | undefined | exclude icon, if match do not resolve the icon from tdesign-icons-vue-next |
+| iconInclude  | string or RegExp (string or RegExp)[] | undefined | included icons, only resolve icons which match iconInclude                 |
 | esm          | boolean                               | false     | whether to import ESM version                                              |
 | plugin       | string[]                              | undefined | self-defined import plugin from tdesign-vue-next                           |
 | exclude      | string or RegExp (string or RegExp)[] | undefined | exclude component name, if match do not resolve the name                   |
+| include      | string or RegExp (string or RegExp)[] | undefined | included component, only resolve component which match include             |
 
 That's it! You can now use Nuxt Module for TDesign in your Nuxt app ✨
 

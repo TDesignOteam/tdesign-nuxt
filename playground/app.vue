@@ -8,7 +8,6 @@
     </t-space>
 
     <t-divider>Layout</t-divider>
-
     <t-divider>Data</t-divider>
     <t-space>
       <t-date-picker />
