@@ -23,7 +23,7 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
       if (!isMatch(component, options.exclude)) {
         addComponent({
           name: `${prefix}-${kebabCase(component)}`,
-          // export:''
+          export: keys === component ? 'default' : component,
           filePath: `tdesign-vue-next/${moduleMode}/${keys}/index`
         });
       }
@@ -56,7 +56,6 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
     if (!isMatch(icon, options.iconExclude)) {
       addComponent({
         name: iconName,
-        // export:''
         filePath: `tdesign-icons-vue-next/esm/components/${iconFilePath}`
       });
     }
