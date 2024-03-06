@@ -39,9 +39,6 @@ npm install --save-dev @tdesign-vue-next/nuxt
 ```js
 export default defineNuxtConfig({
   modules: ['@tdesign-vue-next/nuxt'],
-  build: {
-    transpile: ['tdesign-vue-next']
-  }
   // self-defined configuration for @tdesign-vue-next/nuxt
   // tdesign:{
   //  resolveIcons:true

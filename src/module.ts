@@ -15,7 +15,9 @@ export default defineNuxtModule<ModuleOptions>({
 
     console.log('🚀 nuxt module for tdesign-vue-next is loading');
 
-    resolveTDesignVariables(options, nuxt);
+    nuxt.options.build.transpile.push('tdesign-vue-next');
+
+    resolveTDesignVariables(options);
     resolveTDesignComponents(options);
     resolveTDesignPlugins(options);
     options.resolveIcons && resolveTDesignIcons(options);
