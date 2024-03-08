@@ -1,5 +1,5 @@
-import { TDesignIconComponents } from "./config/icon-components";
-import { TdesignPlugin } from "./config/plugins";
+import { TDesignIconComponent } from './config/icon-components';
+import { TdesignPlugin } from './config/plugins';
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -16,7 +16,7 @@ export interface ModuleOptions {
    * exclude component name, if match do not resolve the name
    */
   exclude?: string | RegExp | (string | RegExp)[];
-   /**
+  /**
    * included component, only resolve component which match include
    */
   include?: string | RegExp | (string | RegExp)[];
@@ -39,10 +39,10 @@ export interface ModuleOptions {
    */
   iconInclude?: string | RegExp | (string | RegExp)[];
 
-   /**
+  /**
    * self-defined import icon component from tdesign-icons-vue-next
    */
-  iconComponents?: TDesignIconComponents[];
+  iconComponents?: TDesignIconComponent[];
 
   /**
    * self-defined import plugin from tdesign-vue-next

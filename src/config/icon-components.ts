@@ -1,8 +1,7 @@
 export const iconComponentList = ['Icon', 'IconFont'] as const;
+export type TDesignIconComponent = (typeof iconComponentList)[number];
 
-export type TDesignIconComponents = (typeof iconComponentList)[number];
-
-export const iconComponentMap:Record<TDesignIconComponents,string> = {
+export const iconComponentMap = {
   Icon: 'svg-sprite',
   IconFont: 'iconfont'
 };

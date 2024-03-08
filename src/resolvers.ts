@@ -68,14 +68,14 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
  */
 export const resolveTDesignIconComponents = (options: ModuleOptions) => {
   const components = options.iconComponents ?? iconComponentList;
-  components.forEach(component =>{
+  components.forEach((component) => {
     addComponent({
       name: component,
-      export:component,
+      export: component,
       filePath: `tdesign-icons-vue-next/esm/${iconComponentMap[component]}/index`
     });
-  })
-}
+  });
+};
 
 /**
  * auto import global CSS variables
