@@ -38,7 +38,7 @@ export const resolveTDesignPlugins = (options: ModuleOptions) => {
   const moduleMode = options.esm ? 'esm' : 'es';
   const plugins = options.plugins ?? pluginList;
   addImportsSources({
-    imports: plugins,
+    imports: [...plugins],
     from: `tdesign-vue-next/${moduleMode}`
   });
 };
