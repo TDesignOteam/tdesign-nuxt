@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     // iconInclude: ['Edit1']
     // prefix: 'tdesign'
     // plugins :['DialogPlugin']
+    // iconComponents:['IconFont']
   },
   devtools: { enabled: true }
 });

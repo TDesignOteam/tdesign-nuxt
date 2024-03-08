@@ -4,7 +4,7 @@
     <t-divider>Basic</t-divider>
     <t-space>
       <t-button>Button</t-button>
-      <t-icon name="cry-and-laugh"></t-icon>
+      <t-icon name="cry-and-laugh" />
     </t-space>
 
     <t-divider>Layout</t-divider>
@@ -23,6 +23,9 @@
     <t-space>
       <edit-icon />
       <edit-1-icon />
+      <icon-font name="sneer" />
+      <icon-font name="unhappy" />
+      <icon name="close" />
     </t-space>
   </div>
 </template>
