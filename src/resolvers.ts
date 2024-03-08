@@ -63,11 +63,6 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
 };
 
 /**
- * auto import icon components from tdesign-icons-vue-next
- */
-export const resolveTDesignIconComponents = (options: ModuleOptions) => { };
-
-/**
  * auto import global CSS variables
  */
 export const resolveTDesignVariables = async (options: ModuleOptions) => {
