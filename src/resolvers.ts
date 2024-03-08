@@ -38,7 +38,7 @@ export const resolveTDesignPlugins = (options: ModuleOptions) => {
   const moduleMode = options.esm ? 'esm' : 'es';
   const plugins = options.plugins ?? pluginList;
   addImportsSources({
-    imports: plugins,
+    imports: [...plugins],
     from: `tdesign-vue-next/${moduleMode}`
   });
 };
@@ -61,6 +61,11 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
     }
   });
 };
+
+/**
+ * auto import icon components from tdesign-icons-vue-next
+ */
+export const resolveTDesignIconComponents = (options: ModuleOptions) => { };
 
 /**
  * auto import global CSS variables

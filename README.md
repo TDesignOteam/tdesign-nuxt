@@ -56,7 +56,7 @@ export default defineNuxtConfig({
 | iconExclude  | string or RegExp (string or RegExp)[] | undefined | exclude icon, if match do not resolve the icon from tdesign-icons-vue-next |
 | iconInclude  | string or RegExp (string or RegExp)[] | undefined | included icons, only resolve icons which match iconInclude                 |
 | esm          | boolean                               | false     | whether to import ESM version                                              |
-| plugin       | string[]                              | undefined | self-defined import plugin from tdesign-vue-next                           |
+| plugins       | TdesignPlugin[]                              | undefined | self-defined import plugin from tdesign-vue-next                           |
 | exclude      | string or RegExp (string or RegExp)[] | undefined | exclude component name, if match do not resolve the name                   |
 | include      | string or RegExp (string or RegExp)[] | undefined | included component, only resolve component which match include             |
 

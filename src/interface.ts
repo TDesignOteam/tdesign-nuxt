@@ -1,3 +1,5 @@
+import { TdesignPlugin } from "./config/plugins";
+
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   /**
@@ -38,5 +40,5 @@ export interface ModuleOptions {
   /**
    * self-defined import plugin from tdesign-vue-next
    */
-  plugins?: Array<string>;
+  plugins?: TdesignPlugin[];
 }
