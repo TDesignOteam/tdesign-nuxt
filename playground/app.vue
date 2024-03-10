@@ -8,6 +8,29 @@
     </t-space>
 
     <t-divider>Layout</t-divider>
+    <t-divider>Navigation</t-divider>
+    <t-space direction="vertical">
+      <t-space>
+        <t-steps :default-current="1">
+          <t-step-item title="步骤1" content="提示文字" />
+          <t-step-item title="步骤2" content="提示文字" />
+          <t-step-item title="步骤3" content="提示文字" />
+        </t-steps>
+      </t-space>
+      <t-space>
+        <t-tabs>
+          <t-tab-panel :value="1" label="选项卡1">
+            <p style="margin: 20px">选项卡1内容区</p>
+          </t-tab-panel>
+          <t-tab-panel :value="2" label="选项卡2">
+            <p style="margin: 20px">选项卡2内容区</p>
+          </t-tab-panel>
+          <t-tab-panel :value="3" label="选项卡3">
+            <p style="margin: 20px">选项卡3内容区</p>
+          </t-tab-panel>x``
+        </t-tabs>
+      </t-space>
+    </t-space>
     <t-divider>Data</t-divider>
     <t-space>
       <t-date-picker />
@@ -75,4 +98,3 @@ const handleLoading = () => {
   }, 1000);
 };
 </script>
-
