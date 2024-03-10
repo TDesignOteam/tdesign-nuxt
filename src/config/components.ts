@@ -13,6 +13,8 @@ export const componentMap = {
   dropdown: ['Dropdown', 'DropdownItem', 'DropdownMenu'],
   menu: ['HeadMenu', 'Menu', 'MenuGroup', 'MenuItem', 'Submenu'],
   pagination: ['Pagination', 'PaginationMini'],
+  steps: ['StepItem', 'Steps'],
+  tabs: ['TabPanel', 'Tabs'],
   'sticky-tool': ['StickyItem', 'StickyTool'],
   'back-top': ['BackTop'],
   'auto-complete': ['AutoComplete', 'HighlightOption'],
