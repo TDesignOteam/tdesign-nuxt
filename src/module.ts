@@ -1,5 +1,5 @@
 import { defineNuxtModule, createResolver } from '@nuxt/kit';
-import { resolveTDesignComponents, resolveTDesignPlugins, resolveTDesignVariables, resolveTDesignIcons } from './resolvers';
+import { resolveTDesignComponents, resolveTDesignPlugins, resolveTDesignVariables, resolveTDesignIcons, resolveTDesignIconComponents } from './resolvers';
 
 import type { ModuleOptions } from './interface';
 
@@ -17,7 +17,8 @@ export default defineNuxtModule<ModuleOptions>({
     iconPrefix: undefined,
     iconExclude: undefined,
     iconInclude: undefined,
-    plugins: undefined
+    plugins: undefined,
+    iconComponents: undefined
   },
   setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url);
@@ -31,5 +32,6 @@ export default defineNuxtModule<ModuleOptions>({
     resolveTDesignComponents(options);
     resolveTDesignPlugins(options);
     options.resolveIcons && resolveTDesignIcons(options);
+    resolveTDesignIconComponents(options);
   }
 });

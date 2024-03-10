@@ -6,6 +6,7 @@ import { map, kebabCase } from 'lodash-es';
 import { isMatch } from './utils';
 
 import type { ModuleOptions } from './interface';
+import { iconComponentList, iconComponentMap } from './config/icon-components';
 
 /**
  * auto import components
@@ -59,6 +60,20 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
         filePath: `tdesign-icons-vue-next/esm/components/${iconFilePath}`
       });
     }
+  });
+};
+
+/**
+ * auto import icon from tdesign-icons-vue-next
+ */
+export const resolveTDesignIconComponents = (options: ModuleOptions) => {
+  const components = options.iconComponents ?? iconComponentList;
+  components.forEach((component) => {
+    addComponent({
+      name: component,
+      export: component,
+      filePath: `tdesign-icons-vue-next/esm/${iconComponentMap[component]}/index`
+    });
   });
 };
 
