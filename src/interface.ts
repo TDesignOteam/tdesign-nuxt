@@ -1,4 +1,4 @@
-import { TdesignPlugin } from "./config/plugins";
+import type { TdesignPlugin } from "./config/plugins";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
