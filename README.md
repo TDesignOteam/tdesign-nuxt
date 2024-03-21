@@ -48,17 +48,18 @@ export default defineNuxtConfig({
 
 #### All Configuration for @tdesign-vue-next/nuxt
 
-| name         | type                                  | default   | description                                                                |
-| ------------ | ------------------------------------- | --------- | -------------------------------------------------------------------------- |
-| resolveIcons | boolean                               | false     | to resolve single icon components from `tdesign-icons-vue-next'            |
-| prefix       | string                                | 't'       | self-defined the component prefix                                          |
-| iconPrefix   | string                                | undefined | self-defined the icon prefix                                               |
-| iconExclude  | string or RegExp (string or RegExp)[] | undefined | exclude icon, if match do not resolve the icon from tdesign-icons-vue-next |
-| iconInclude  | string or RegExp (string or RegExp)[] | undefined | included icons, only resolve icons which match iconInclude                 |
-| esm          | boolean                               | false     | whether to import ESM version                                              |
-| plugins       | TdesignPlugin[]                              | undefined | self-defined import plugin from tdesign-vue-next                           |
-| exclude      | string or RegExp (string or RegExp)[] | undefined | exclude component name, if match do not resolve the name                   |
-| include      | string or RegExp (string or RegExp)[] | undefined | included component, only resolve component which match include             |
+| name            | type                                  | default   | description                                                                |
+| --------------- | ------------------------------------- | --------- | -------------------------------------------------------------------------- |
+| resolveIcons    | boolean                               | false     | to resolve single icon components from `tdesign-icons-vue-next'            |
+| prefix          | string                                | 't'       | self-defined the component prefix                                          |
+| iconPrefix      | string                                | undefined | self-defined the icon prefix                                               |
+| iconExclude     | string or RegExp (string or RegExp)[] | undefined | exclude icon, if match do not resolve the icon from tdesign-icons-vue-next |
+| iconInclude     | string or RegExp (string or RegExp)[] | undefined | included icons, only resolve icons which match iconInclude                 |
+| esm             | boolean                               | false     | whether to import ESM version                                              |
+| plugins         | TdesignPlugin[]                       | undefined | self-defined import plugin from tdesign-vue-next                           |
+| exclude         | string or RegExp (string or RegExp)[] | undefined | exclude component name, if match do not resolve the name                   |
+| include         | string or RegExp (string or RegExp)[] | undefined | included component, only resolve component which match include             |
+| importVariables | boolean                               | true      | import default theme variables or not, set it to false if customize theme  |
 
 That's it! You can now use Nuxt Module for TDesign in your Nuxt app ✨
 
