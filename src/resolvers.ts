@@ -66,6 +66,7 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
  * auto import global CSS variables
  */
 export const resolveTDesignVariables = async (options: ModuleOptions) => {
+  
   const nuxt = useNuxt();
   const stylePath = options.esm ? '../esm/style/index.js' : '../es/style/index.css';
 

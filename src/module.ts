@@ -17,17 +17,17 @@ export default defineNuxtModule<ModuleOptions>({
     iconPrefix: undefined,
     iconExclude: undefined,
     iconInclude: undefined,
-    plugins: undefined
+    plugins: undefined,
+    importVariables: true,
   },
   setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url);
-
     console.log('🚀 nuxt module for tdesign-vue-next is loading');
 
     nuxt.options.build.transpile.push('tdesign-vue-next');
     nuxt.options.build.transpile.push('tdesign-icons-vue-next');
 
-    resolveTDesignVariables(options);
+    options.importVariables && resolveTDesignVariables(options);
     resolveTDesignComponents(options);
     resolveTDesignPlugins(options);
     options.resolveIcons && resolveTDesignIcons(options);

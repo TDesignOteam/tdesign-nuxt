@@ -41,4 +41,9 @@ export interface ModuleOptions {
    * self-defined import plugin from tdesign-vue-next
    */
   plugins?: TdesignPlugin[];
+  /**
+   * import default theme variables or not, set it to false if customize theme
+   * @default true
+   */
+  importVariables?: boolean;
 }
