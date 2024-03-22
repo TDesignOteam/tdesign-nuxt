@@ -1,7 +1,7 @@
 import { addComponent, addImportsSources, tryResolveModule, useNuxt } from '@nuxt/kit';
 import { join } from 'path';
 
-import { componentMap, pluginList, iconList } from './config';
+import { componentMap, pluginList, iconList, pluginMap } from './config';
 import { map, kebabCase } from 'lodash-es';
 import { isMatch } from './utils';
 
@@ -37,10 +37,13 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
 export const resolveTDesignPlugins = (options: ModuleOptions) => {
   const moduleMode = options.esm ? 'esm' : 'es';
   const plugins = options.plugins ?? pluginList;
-  addImportsSources({
-    imports: [...plugins],
-    from: `tdesign-vue-next/${moduleMode}/plugins`
-  });
+  plugins.map(plugin=>{
+    addImportsSources({
+      imports: [plugin],
+      from: `tdesign-vue-next/${moduleMode}/${pluginMap[plugin]}/plugin`
+    });
+  })
+
 };
 
 /**
