@@ -37,7 +37,7 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
 export const resolveTDesignPlugins = (options: ModuleOptions) => {
   const moduleMode = options.esm ? 'esm' : 'es';
   const plugins = options.plugins ?? pluginList;
-  plugins.map(plugin=>{
+  plugins.map(plugin => {
     addImportsSources({
       imports: [plugin],
       from: `tdesign-vue-next/${moduleMode}/${pluginMap[plugin]}/plugin`
@@ -69,7 +69,7 @@ export const resolveTDesignIcons = (options: ModuleOptions) => {
  * auto import global CSS variables
  */
 export const resolveTDesignVariables = async (options: ModuleOptions) => {
-  
+
   const nuxt = useNuxt();
   const stylePath = options.esm ? '../esm/style/index.js' : '../es/style/index.css';
 
