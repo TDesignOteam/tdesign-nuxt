@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     // exclude: ['Button']
     // iconInclude: ['Edit1']
     // prefix: 'tdesign'
-    // plugins :['DialogPlugin']
+    // plugins:['NotifyPlugin'],
+    // importVariables:false
   },
+  // css:['~/assets/theme.css'],
   devtools: { enabled: true }
 });

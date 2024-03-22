@@ -1,4 +1,4 @@
-export const pluginList = ['DialogPlugin', 'MessagePlugin', 'NotifyPlugin', 'LoadingPlugin', 'PopupPlugin', 'DrawerPlugin'] as const;
-
+export const pluginList = ['DialogPlugin', 'MessagePlugin', 'NotifyPlugin', 'LoadingPlugin'] as const;
+// PopupPlugin and DrawerPlugin is in progress
 export type TdesignPlugin = typeof pluginList[number];
-// popupPlugin and drawerPlugin is in progress
+

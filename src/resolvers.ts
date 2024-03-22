@@ -39,7 +39,7 @@ export const resolveTDesignPlugins = (options: ModuleOptions) => {
   const plugins = options.plugins ?? pluginList;
   addImportsSources({
     imports: [...plugins],
-    from: `tdesign-vue-next/${moduleMode}`
+    from: `tdesign-vue-next/${moduleMode}/plugins`
   });
 };
 
