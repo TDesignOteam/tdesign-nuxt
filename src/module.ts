@@ -20,14 +20,20 @@ export default defineNuxtModule<ModuleOptions>({
     plugins: undefined,
     importVariables: true,
   },
-  setup(options: ModuleOptions, nuxt) {
+  async setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url);
     console.log('🚀 nuxt module for tdesign-vue-next is loading');
 
     nuxt.options.build.transpile.push('tdesign-vue-next');
     nuxt.options.build.transpile.push('tdesign-icons-vue-next');
 
-    options.importVariables && resolveTDesignVariables(options);
+    if (typeof options.importVariables == 'string') {
+      const customizeTheme = await resolver.resolvePath(options.importVariables)
+      nuxt.options.css.push(customizeTheme);
+    } else {
+      options.importVariables && resolveTDesignVariables(options);
+    }
+
     resolveTDesignComponents(options);
     resolveTDesignPlugins(options);
     options.resolveIcons && resolveTDesignIcons(options);
