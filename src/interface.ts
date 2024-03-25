@@ -45,5 +45,5 @@ export interface ModuleOptions {
    * import default theme variables or not, set it to false if customize theme
    * @default true
    */
-  importVariables?: boolean;
+  importVariables?: boolean | string;
 }
