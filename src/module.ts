@@ -20,7 +20,7 @@ export default defineNuxtModule<ModuleOptions>({
     plugins: undefined,
     importVariables: true
   },
-  setup(options: ModuleOptions, nuxt) {
+  async setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url);
     console.log('🚀 nuxt module for tdesign-vue-next is loading');
 
@@ -29,7 +29,13 @@ export default defineNuxtModule<ModuleOptions>({
 
     options.esm && nuxt.options.build.transpile.push('dayjs');
 
-    options.importVariables && resolveTDesignVariables(options);
+    if (typeof options.importVariables == 'string') {
+      const customizeTheme = await resolver.resolvePath(options.importVariables);
+      nuxt.options.css.push(customizeTheme);
+    } else {
+      options.importVariables && resolveTDesignVariables(options);
+    }
+
     resolveTDesignComponents(options);
     resolveTDesignPlugins(options);
     options.resolveIcons && resolveTDesignIcons(options);

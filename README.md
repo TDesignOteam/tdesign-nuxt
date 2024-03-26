@@ -59,7 +59,7 @@ export default defineNuxtConfig({
 | plugins         | TdesignPlugin[]                       | undefined | self-defined import plugin from tdesign-vue-next                           |
 | exclude         | string or RegExp (string or RegExp)[] | undefined | exclude component name, if match do not resolve the name                   |
 | include         | string or RegExp (string or RegExp)[] | undefined | included component, only resolve component which match include             |
-| importVariables | boolean                               | true      | import default theme variables or not, set it to false if customize theme  |
+| importVariables | boolean or string                     | true      | import default theme variables or not, set it to false if customize theme  |
 
 That's it! You can now use Nuxt Module for TDesign in your Nuxt app ✨
 
