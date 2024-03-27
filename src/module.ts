@@ -18,7 +18,7 @@ export default defineNuxtModule<ModuleOptions>({
     iconExclude: undefined,
     iconInclude: undefined,
     plugins: undefined,
-    importVariables: true,
+    importVariables: true
   },
   async setup(options: ModuleOptions, nuxt) {
     const resolver = createResolver(import.meta.url);
@@ -27,8 +27,10 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push('tdesign-vue-next');
     nuxt.options.build.transpile.push('tdesign-icons-vue-next');
 
+    options.esm && nuxt.options.build.transpile.push('dayjs');
+
     if (typeof options.importVariables == 'string') {
-      const customizeTheme = await resolver.resolvePath(options.importVariables)
+      const customizeTheme = await resolver.resolvePath(options.importVariables);
       nuxt.options.css.push(customizeTheme);
     } else {
       options.importVariables && resolveTDesignVariables(options);
