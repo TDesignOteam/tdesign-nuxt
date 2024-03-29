@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
   tdesign: {
-    resolveIcons: true,
+    resolveIcons: true
     // include:['Button']
     // exclude: ['Button']
     // iconInclude: ['Edit1']
@@ -9,5 +9,6 @@ export default defineNuxtConfig({
     // plugins:['NotifyPlugin'],
     // importVariables:'~/assets/theme.css'
   },
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+  devServer: { port: 17001 }
 });
