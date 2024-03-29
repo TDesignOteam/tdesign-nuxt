@@ -51,7 +51,7 @@
     "nuxt": "^3.11.1",
     "prettier": "^3.2.5",
     "tdesign-icons-vue-next": "^0.2.2",
-    "tdesign-vue-next": "^1.9.1",
+    "tdesign-vue-next": "^1.9.2",
     "vitest": "^1.4.0"
   }
 }
