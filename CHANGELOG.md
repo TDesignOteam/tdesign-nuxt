@@ -1,4 +1,4 @@
-## 0.1.3 `2024-03-21`
+## 0.1.3 `2024-03-29`
 
 - feat: importVariables support customized theme path @liweijie0812
 - fix: fix customizing theme conflicts with plugin usage @uyarn @liweijie0812
