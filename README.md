@@ -25,13 +25,13 @@ Nuxt Module for TDesign Vue Next.
 
 ```bash
 # Using pnpm
-pnpm add -D @tdesign-vue-next/nuxt
+pnpm add -D tdesign-vue-next @tdesign-vue-next/nuxt
 
 # Using yarn
-yarn add --dev @tdesign-vue-next/nuxt
+yarn add --dev tdesign-vue-next @tdesign-vue-next/nuxt
 
 # Using npm
-npm install --save-dev @tdesign-vue-next/nuxt
+npm install --save-dev tdesign-vue-next @tdesign-vue-next/nuxt
 ```
 
 2. Add `@tdesign-vue-next/nuxt` to the `modules` section of `nuxt.config.ts`
