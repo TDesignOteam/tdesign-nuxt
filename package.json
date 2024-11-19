@@ -1,5 +1,6 @@
 {
   "name": "@tdesign-vue-next/nuxt",
+  "packageManager": "pnpm@9.13.2",
   "version": "0.1.3",
   "description": "Nuxt Module for TDesign",
   "repository": "tdesignOteam/tdesign-nuxt",
