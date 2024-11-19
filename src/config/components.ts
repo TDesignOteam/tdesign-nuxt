@@ -70,4 +70,4 @@ export const componentMap = {
   'config-provider': ['ConfigProvider'],
   'empty': ['Empty'],
   'typography': ['Typography', 'Text', 'Title', 'Paragraph'],
-}
+};
