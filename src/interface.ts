@@ -1,4 +1,4 @@
-import type { TdesignPlugin } from "./config/plugins";
+import type { TdesignPlugin } from './config/plugins';
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -15,7 +15,7 @@ export interface ModuleOptions {
    * exclude component name, if match do not resolve the name
    */
   exclude?: string | RegExp | (string | RegExp)[];
-   /**
+  /**
    * included component, only resolve component which match include
    */
   include?: string | RegExp | (string | RegExp)[];
