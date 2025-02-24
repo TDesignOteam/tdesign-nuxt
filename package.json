@@ -30,7 +30,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.14.159",
+    "@nuxt/kit": "^3.15.4",
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
@@ -39,19 +39,19 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^0.7.0",
+    "@nuxt/eslint-config": "^1.1.0",
     "@nuxt/module-builder": "^0.8.4",
-    "@nuxt/schema": "^3.14.159",
-    "@nuxt/test-utils": "^3.14.4",
+    "@nuxt/schema": "^3.15.4",
+    "@nuxt/test-utils": "^3.17.0",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.13.5",
     "changelogen": "^0.5.7",
-    "eslint": "9.14.0",
-    "less": "^4.2.0",
-    "nuxt": "^3.14.159",
-    "prettier": "^3.3.3",
-    "tdesign-icons-vue-next": "^0.3.3",
-    "tdesign-vue-next": "^1.10.3",
-    "vitest": "^2.1.5"
+    "eslint": "^9.21.0",
+    "less": "^4.2.2",
+    "nuxt": "^3.15.4",
+    "prettier": "^3.5.2",
+    "tdesign-icons-vue-next": "^0.3.4",
+    "tdesign-vue-next": "^1.10.7",
+    "vitest": "^3.0.6"
   }
 }
