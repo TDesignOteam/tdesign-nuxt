@@ -7,6 +7,18 @@ import { isMatch } from './utils';
 
 import type { ModuleOptions } from './interface';
 
+const componentSpecialCases: Record<string, Record<string, { tag: string; export: 'default' | string }>> = {
+  typography: {
+    Typography: { tag: 'typography', export: 'default' },
+    TypographyTitle: { tag: 'typography-title', export: 'Title' },
+    TypographyText: { tag: 'typography-text', export: 'Text' },
+    TypographyParagraph: { tag: 'typography-paragraph', export: 'Paragraph' },
+  },
+  qrcode: {
+    QRCode: { tag: 'qrcode', export: 'default' },
+  },
+};
+
 /**
  * auto import components
  */
@@ -17,16 +29,29 @@ export const resolveTDesignComponents = (options: ModuleOptions) => {
   map(componentMap, (subComponents: string[], keys: string) => {
     let includeComponents = subComponents;
 
-    if (options.include) includeComponents = subComponents.filter(component => isMatch(component, options.include));
+    // 对存在特殊导出/标签映射的组件（如 typography、qrcode），合并补齐组件列表，
+    // 确保 `Typography`（默认导出）等条目也能被注册。
+    const specialCases = componentSpecialCases[keys];
+    if (specialCases) {
+      includeComponents = Array.from(new Set([...subComponents, ...Object.keys(specialCases)]));
+    }
+
+    if (options.include) includeComponents = includeComponents.filter(component => isMatch(component, options.include));
 
     includeComponents.forEach((component) => {
-      if (!isMatch(component, options.exclude)) {
-        addComponent({
-          name: `${prefix}-${kebabCase(component)}`,
-          export: keys === component ? 'default' : component,
-          filePath: `tdesign-vue-next/${moduleMode}/${keys}/index`,
-        });
-      }
+      if (isMatch(component, options.exclude)) return;
+
+      const special = specialCases?.[component];
+      const tagName = special ? special.tag : kebabCase(component);
+      const exportName = special
+        ? special.export
+        : (keys === component ? 'default' : component);
+
+      addComponent({
+        name: `${prefix}-${tagName}`,
+        export: exportName,
+        filePath: `tdesign-vue-next/${moduleMode}/${keys}/index`,
+      });
     });
   });
 };
