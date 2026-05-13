@@ -1,3 +1,19 @@
+## v0.2.1
+
+[compare changes](https://github.com/tdesignOteam/tdesign-nuxt/compare/v0.1.5...v0.2.1)
+
+### 🚀 Enhancements
+
+- Update component map ([#27](https://github.com/tdesignOteam/tdesign-nuxt/pull/27))
+
+### 🏡 Chore
+
+- Update CHANGELOG ([6f70b02](https://github.com/tdesignOteam/tdesign-nuxt/commit/6f70b02))
+
+### ❤️ Contributors
+
+- Wū Yāng ([@uyarn](http://github.com/uyarn))
+
 ## 0.1.5 `2024-11-19`
 
 - feat：add typography、empty and new icons  @liweijie0812 ([#21](https://github.com/tdesignOteam/tdesign-nuxt/pull/21))
