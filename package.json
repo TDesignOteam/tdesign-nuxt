@@ -34,7 +34,7 @@
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
-    "tdesign-icons-vue-next": ">=0.3.3",
+    "tdesign-icons-vue-next": ">=0.4.4",
     "tdesign-vue-next": ">=1"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "less": "^4.2.0",
     "nuxt": "^3.14.159",
     "prettier": "^3.3.3",
-    "tdesign-icons-vue-next": "^0.3.3",
+    "tdesign-icons-vue-next": "^0.4.4",
     "tdesign-vue-next": "^1.19.2",
     "vitest": "^2.1.5"
   }
