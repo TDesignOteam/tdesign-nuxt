@@ -69,5 +69,6 @@ export const componentMap = {
   'upload': ['Upload'],
   'config-provider': ['ConfigProvider'],
   'empty': ['Empty'],
-  'typography': ['Typography', 'Text', 'Title', 'Paragraph'],
+  'typography': ['TypographyTitle', 'TypographyParagraph', 'TypographyText'],
+  'qrcode': ['QRCode'],
 };

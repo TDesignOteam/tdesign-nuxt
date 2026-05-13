@@ -1,5 +1,12 @@
 <template>
   <div>
+    <t-qrcode value="https://www.tencent.com"></t-qrcode>
+    <t-button>Button</t-button>
+    <t-enhanced-table></t-enhanced-table>
+    <t-typography-title>What is TDesign</t-typography-title>
+    <t-typography-text mark>
+      TDesign is an enterprise-level design system accumulated by Tencent's various business teams.
+    </t-typography-text>
     <div>TDesign Nuxt module playground!</div>
     <t-divider>Basic</t-divider>
     <t-space>
@@ -12,42 +19,24 @@
     <t-space direction="vertical">
       <t-space>
         <t-steps :default-current="1">
-          <t-step-item
-            title="步骤1"
-            content="提示文字"
-          />
-          <t-step-item
-            title="步骤2"
-            content="提示文字"
-          />
-          <t-step-item
-            title="步骤3"
-            content="提示文字"
-          />
+          <t-step-item title="步骤1" content="提示文字" />
+          <t-step-item title="步骤2" content="提示文字" />
+          <t-step-item title="步骤3" content="提示文字" />
         </t-steps>
       </t-space>
       <t-space>
         <t-tabs>
-          <t-tab-panel
-            :value="1"
-            label="选项卡1"
-          >
+          <t-tab-panel :value="1" label="选项卡1">
             <p style="margin: 20px">
               选项卡1内容区
             </p>
           </t-tab-panel>
-          <t-tab-panel
-            :value="2"
-            label="选项卡2"
-          >
+          <t-tab-panel :value="2" label="选项卡2">
             <p style="margin: 20px">
               选项卡2内容区
             </p>
           </t-tab-panel>
-          <t-tab-panel
-            :value="3"
-            label="选项卡3"
-          >
+          <t-tab-panel :value="3" label="选项卡3">
             <p style="margin: 20px">
               选项卡3内容区
             </p>
