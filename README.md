@@ -5,6 +5,8 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
+- ⚠️ Migrated to https://github.com/Tencent/tdesign-vue-next/tree/develop/packages/tdesign-vue-next-nuxt
+
 Nuxt Module for TDesign Vue Next.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
